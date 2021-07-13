@@ -17,7 +17,8 @@ let index = {
 		save: function(){
 			let data = {
 					title: $("#title").val(),
-					content: $("#content").val()
+					content: $("#content").val(),
+					
 			};
 			
 			$.ajax({ 
@@ -36,7 +37,7 @@ let index = {
 		
 		deleteById: function(){
 			let id = $("#id").text();
-			
+			console.log(id)
 			$.ajax({ 
 				type: "DELETE",
 				url: "/ajax/board/"+id,
@@ -51,7 +52,7 @@ let index = {
 		
 		update: function(){
 			let id = $("#id").val();
-			
+			console.log(id)
 			let data = {
 					title: $("#title").val(),
 					content: $("#content").val()

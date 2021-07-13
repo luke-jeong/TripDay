@@ -17,8 +17,12 @@ a {
 }
 
 .board_wrap {
-    width: 1000px;
+    width: 1200px;
     margin: 100px auto;
+}
+.board_sub {
+    width: 1000px;
+    margin: 20px auto;
 }
 
 .board_title {
@@ -97,7 +101,7 @@ a {
 }
 
 .board_list .title {
-    width: 60%;
+    width: 50%;
     text-align: left;
 }
 
@@ -110,7 +114,7 @@ a {
 }
 
 .board_list .date {
-    width: 10%;
+    width: 20%;
 }
 
 .board_list .count {

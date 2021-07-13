@@ -26,11 +26,13 @@ public class MyOauth2UserService extends DefaultOAuth2UserService{
 		String name = oauth2User.getAttribute("name");
 		String email = oauth2User.getAttribute("email");
 		String role = "ROLE_USER";
+		String nickname = null;
 		User user = userRepository.findByUsernameVaild(username);
 		if(user == null) {
 			user=User.builder()
 					.username(username)
 					.password(password)
+					.nickname(nickname)
 					.email(email)
 					.enabled(true)
 					.role(role)

@@ -12,10 +12,14 @@ public class UserRegistration {
     @Size(min=3, max=15)
     String username;
 
-	
+
 	@NotEmpty(message="이메일 주소를 입력하세요")
 	@Email(message="이메일 주소가 올바르지 않습니다")
 	String email;
+
+	@NotEmpty(message="닉네임을 입력하세요")
+	@Size(min=3, max=15)
+	String nickname;
 
     @NotEmpty(message="비밀번호를 입력하세요")
     @Size(min=6, max=12, message="6 자리 이상 12 자리 이하이어야 합니다.")

@@ -35,7 +35,7 @@ public class UserController {
             return "user/register";
         }
         userService.save(userRegistration);
-        return "redirect:registerSuccess";
+        return "redirect:login";
     }
     @RequestMapping("registerSuccess")
     public String registerSurccess() {
@@ -50,5 +50,10 @@ public class UserController {
 	@GetMapping("/user/updateUser")
 	public String updateUser() {
 	  return "user/updateUser";
+	}
+
+	@GetMapping("/user/updateNick")
+	public String updateNick() {
+	  return "user/updateNick";
 	}
 }

@@ -19,6 +19,8 @@ import com.gb.trip.service.BoardService;
 @RestController
 public class BoardAjaxController {
 
+
+
 	@Autowired
 	private BoardService boardService;
 
@@ -29,8 +31,9 @@ public class BoardAjaxController {
 	}
 
 	@DeleteMapping("/ajax/board/{id}")
-	public ResponseDto<Integer> deleteById(@PathVariable int id){
-		boardService.deleteBoard(id);
+	public ResponseDto<Integer> deleteById(@PathVariable int id, @AuthenticationPrincipal MyUserDetails myUserDetails){
+
+		boardService.deleteBoard(id, myUserDetails.getUser());
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 

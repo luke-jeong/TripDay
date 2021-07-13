@@ -29,7 +29,7 @@
 					<dl>
 						<dt>수정</dt>
 						<dd>
-							<input type="text" placeholder="제목 입력" id="title">
+							<input type="text" value = "${board.title}" placeholder="제목 입력" id="title">
 						</dd>
 					</dl>
 				</div>
@@ -40,10 +40,10 @@
 			</div>
 
 		</div>
-		<div class="bt_wrap">
-			<button id="btn-update" class="btn btn-primary">글수정완료</button>
-			<a href="list.html">취소</a>
-		</div>
+	<div class="bt_wrap">
+	<button id="btn-update" class="bt_css bt_black">수정</button>
+	<a href="/?${ pagination.queryString}" class="bt_css">취소</a>
+	</div>
 	</form>
 
 </div>

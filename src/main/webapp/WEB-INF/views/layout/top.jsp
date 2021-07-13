@@ -31,12 +31,12 @@
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="JZAuzOIL"></script>
 	
 <!-- 	<div class="fb-share-button"  ><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8085%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><img alt="페북" src="res/img/페북.png"></a></div> -->
-	<div class="logoarea">
+	<div class="logoarea" style="width: 1200px; margin: 0 auto;">
 				<!--S:Logo-->
 		
 				<!--//E:Logo-->
 				<!--S:SNS버튼모음-->
-		<ul class="sns_list" style="list-style: none;">
+		<ul class="sns_list" style="list-style: none; float: right;">
 
 			<li class="sns-item"><a href="javascript:sendLink()"><img alt="인스타" src="res/img/카톡.png"></a></li>
 			<li class="sns-item" data-href="http://localhost:8085/"><a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8085%2F&amp;src=sdkpreparse','name','resizable=no width=200 height=100');return false"><img alt="페북" src="res/img/페북.png"></a></li>

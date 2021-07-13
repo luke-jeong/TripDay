@@ -16,11 +16,11 @@ import lombok.Data;
 public class MyUserDetails implements UserDetails, OAuth2User{
     private static final long serialVersionUID = 1L;
 
-    
+
     private User user;
     private Map<String,Object> attributes;
-    
-    
+
+
 //    final boolean accountNonExpired = true;
 //    final boolean accountNonLocked = true;
 //    final boolean credentialsNonExpired = true;
@@ -32,7 +32,7 @@ public class MyUserDetails implements UserDetails, OAuth2User{
 //    final String name;
 //    final String email;
 //    final String role;
-    
+
 
     public MyUserDetails(User user) {
 //        switch (user.getRole()) {
@@ -51,7 +51,7 @@ public class MyUserDetails implements UserDetails, OAuth2User{
     public MyUserDetails(User user, Map<String,Object> attributes) {
     	this.user = user;
     	this.attributes = attributes;
-    
+
     }
 
 
@@ -70,7 +70,7 @@ public class MyUserDetails implements UserDetails, OAuth2User{
 		Collection<GrantedAuthority> collect = new ArrayList<>();
 		/*
 		 * collect.add(new GrantedAuthority() {
-		 * 
+		 *
 		 * @Override public String getAuthority() { // TODO Auto-generated method stub
 		 * return user.getRole(); } }); return collect;
 		 */
@@ -87,15 +87,18 @@ public class MyUserDetails implements UserDetails, OAuth2User{
 		// TODO Auto-generated method stub
 		return user.getUsername();
 	}
-	
+
 	public String getEmail() {
 		return user.getEmail();
 	}
-	
+
 	public String getRole() {
 		return user.getRole();
 	}
-	
+	public String getNickname() {
+		return user.getNickname();
+	}
+
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub

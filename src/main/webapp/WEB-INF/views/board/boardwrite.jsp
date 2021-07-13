@@ -25,8 +25,8 @@
 
 	</div>
 	<div class="bt_wrap">
-	<button id="btn-save" class="btn btn-primary">글쓰기완료</button>
-	<a href="list.html">취소</a>
+	<button id="btn-save" class="bt_css bt_black">등록</button>
+	<a href="/?${ pagination.queryString}" class="bt_css">취소</a>
 	</div>
 	</form>
 	

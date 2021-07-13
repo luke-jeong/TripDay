@@ -12,10 +12,8 @@ header{
 }
 
 body{
-	
-	padding-top: 75px;
 	text-decoration: none;
-}
+}	
 
 .sns-item{
 	float:left;
@@ -37,7 +35,7 @@ body{
 }
 #logo{
 	text-align: center;
-	margin-right:150px;
+
 }
 
 .listWrap { border-top:2px solid #9b9b9b; }
@@ -48,10 +46,11 @@ body{
 .imgList li > div.selectChek input { display:none; margin-top:55px; }
 .imgList li img { float:left; width:200px; height:180px; margin:5px 20px 0 0; }
 .imgList li a { cursor: pointer; text-decoration: none; display: block;}
+.imgList li a p {text-decoration: none; color: black;}
 .imgList li dl { margin:20px 0 0 10px; }
-.imgList li dl dt { margin-bottom:8px; font-size:14px; color:#333; letter-spacing:-1px; }
-.imgList li dl dd { padding-right:10px; font-size:12px; color:#666; line-height:1.6; font-family:'돋움', Dotum; letter-spacing:-1px; }
-.imgList li dl dd strong { display:block; margin-top:3px; font-family:'돋움', Dotum; font-weight:bold; }
+.imgList li dl dt { margin-bottom:8px; font-size:20px; color:#333; letter-spacing:-1px; }
+.imgList li dl dd { padding-right:10px; font-size:13px; color:#666; line-height:1.6; letter-spacing:-1px;}
+.imgList li dl dd strong { display:block; margin-top:3px; font-weight:bold; }
 .tableWrap { margin-bottom:30px; border-top:3px solid #454545; overflow:hidden; border-bottom:1px solid #454545; }
 .tableWrap01 { margin-bottom:30px; border-top:1px solid #454545; overflow:hidden; border-bottom:1px solid #454545; }
 .tableWrap.grayLine { border-bottom:1px solid #e4e4e4;  }
@@ -136,4 +135,6 @@ body{
 @media all and (max-width:640px) {
 .camp_info_box .img_b{width:100%; height:280px; float:left;}
 }
+#aTag > a{ color: black; text-decoration: none;}
 }
+.none{ display: none;}

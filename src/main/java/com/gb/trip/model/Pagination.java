@@ -9,6 +9,7 @@ public class Pagination {
     int recordCount;   // 전체 레코드 수
 
     public String getQueryString() {
-        return String.format("pg=%d&sz=%d", pg, sz);
+
+        return String.format("pg=%d",pg);
     }
 }
