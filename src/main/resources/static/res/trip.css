@@ -1,5 +1,45 @@
 @charset "UTF-8";
-body{text-decoration: none;}
+html{
+	font-family: 'Poor Story', cursive;
+}
+
+header{
+
+	top:0;
+	left:0;
+	right:0;
+
+}
+
+body{
+	
+	padding-top: 75px;
+	text-decoration: none;
+}
+
+.sns-item{
+	float:left;
+	cursor:pointer;
+	padding : 5px;
+}
+
+.go_top{
+	width:40px;
+	height:40px;
+	position:fixed;
+	background-color: darkslategrey;
+	color:white;
+	right:50px;
+	bottom:50px;
+	text-align:center;
+	line-height:40px;
+	float:right;
+}
+#logo{
+	text-align: center;
+	margin-right:150px;
+}
+
 .listWrap { border-top:2px solid #9b9b9b; }
 #content .imgList { margin:0px; }
 #content .listWrap p { margin:0px; }
@@ -76,8 +116,8 @@ body{text-decoration: none;}
 	.btn_gB1{background:#fff; height:38px; text-align:center; color:#777; border:1px solid #bebebe; font-size:13px;}
 
 	.best{width:32%; padding-left:20px;background:#375b9c  no-repeat left 30px center;}
-	.zzim{width:32%; margin:0 1%;background:#e32242  no-repeat left 36px center;padding-left:20px; }
-	.btn_modify{width:33%;}
+	.zzim{width:30%; margin:0 1%;background:#e32242  no-repeat left 36px center; }
+	.btn_modify{width:30%;}
 
 @media all and (max-width:1000px) {
 

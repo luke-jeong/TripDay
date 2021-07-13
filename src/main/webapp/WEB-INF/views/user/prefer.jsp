@@ -39,5 +39,5 @@
 </div>
 </div>
 
-<script src="../js/tripInfo.js"></script>
+<script src="../res/js/tripInfo.js"></script>
 <%@ include file="../layout/footer.jsp"%>

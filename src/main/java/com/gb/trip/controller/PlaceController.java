@@ -24,8 +24,8 @@ public class PlaceController {
 	public void list(Model model, @RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			@RequestParam(value="areacode", required = false, defaultValue = "")String areacode, 
 			@RequestParam(value = "sigungucode", required = false, defaultValue = "")String sigungucode,
-			@RequestParam(value = "arrange", required = false, defaultValue = "R")String arrange,
-			@RequestParam(value = "numOfPage", required = false, defaultValue = "20")String numOfPage,			
+			@RequestParam(value = "arrange", required = false, defaultValue = "P")String arrange,
+			@RequestParam(value = "numOfPage", required = false, defaultValue = "10")String numOfPage,			
 			@RequestParam(value = "s_date", required = false, defaultValue = "20")String s_date			
 	) throws IOException {
 		int totalCnt = apiService.getCount(areacode, sigungucode);

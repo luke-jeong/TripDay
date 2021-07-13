@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="layout/header.jsp"%>
+<%@ include file="layout/top.jsp"%>
 
 <script type="text/javascript">
 $(function() {
@@ -170,5 +171,5 @@ function setAtagHtml(){
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="/js/tripInfo.js"></script>
+<script type="text/javascript" src="res/js/tripInfo.js"></script>
 <%@ include file="layout/footer.jsp"%>
