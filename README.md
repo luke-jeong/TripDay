@@ -25,7 +25,7 @@ DB Table은 4가지로 구성되어있습니다.
 회원 정보를 담고있는 **USER**  
 게시판 정보를 담고있는 **BOARD**   
 게시판의 댓글정보를 담고있는 **REPLY**  
-사용자가 저장한 즐겨찾기 정보를 담고있는 **PREFER**  
+유저가 저장한 즐겨찾기 정보를 담고있는 **PREFER**  
 
 BOARD에서는 USER의 id를 foreign key로 가져오고,  
 REPLY에서는 USER의 id와 BOARD의 id를 foreign key로 가져옵니다. 
@@ -88,33 +88,29 @@ index.jsp에 taglib를 추가했습니다.
 
 ----------
 >> 날씨와 여행지 정보는 api를 받아와서 출력했습니다.
->> 날씨 api
+>> 날씨 api  
+ 
+ajax를 이용해서 기상청으로부터 데이터를 받아왔습니다.
+        $.ajax({
+				
+				url : 'search_date',
+				type : 'post',
+				dataType : 'json',
+				data : JSON.stringify({areacode : result[i].areacode, s_date : s_date}),
+				contentType:'application/json',
+				error : function(xhr, status, msg) {
+					alert("상태값 :" + status + " Http에러메시지 :" + msg);
+				},
+				success : function(response) {
+					list.push(response);
+					if(cnt == result.length-1){
+					weatherListResult(list);
+					}
+					cnt = cnt +1;
+				}
 
-        URL url = new URL("http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey="
-               + serviceKey + "&numOfRows=" + numOfRows + "&pageNo=" + pageNo + "&base_date=" + base_date
-               + "&base_time=" + base_time + "&nx=" + nx + "&ny=" + ny + "&dataType=JSON");
-
-         BufferedReader bf;
-         String r = "";
-         bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
-         while ((r = bf.readLine()) != null) {
-
-            json = json.concat(r);
-         }
-
-         ObjectMapper mapper = new ObjectMapper();
-         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-     
-         JsonNode node = mapper.readTree(json);
-         root = mapper.readValue(node.findValue("items").toString(), Items.class);
-
-
-사용자가 선택한 날짜와 지역 정보를 url에 넣어주고 넣어준 url을 통해 받아온 날씨 결과를 controller에 전달하여 출력했습니다.
-
-    return root.getItem();
-
-날씨는 사용자가 선택한 날짜를 현재 날짜와 비교하여 단기 예보와 장기 예보로 나누어야했는데,  
-이는 controller에서 날짜 차이를 계산해 if 문으로 구분했습니다.
+날씨는 유가 선택한 날짜를 현재 날짜와 비교하여 단기 예보와 장기 예보로 나누어야했는데,  
+이는 controller에서 period를 이용해 날짜 차이를 계산해 if 문으로 구분했습니다.
 
     LocalDate s_date_local = LocalDate.parse(map.get("s_date"), DateTimeFormatter.ISO_DATE);
 		LocalDate today = LocalDate.now();
@@ -124,3 +120,38 @@ index.jsp에 taglib를 추가했습니다.
     
 
 >> 여행지 api
+
+여행지 api도 날씨와 마찬가지로 ajax를 통해서 데이터를 받아왔습니다.
+
+	$.ajax({
+					url : 'http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?serviceKey=jiMuTvx6cLYWRrR2EKwGefsF3O966xEpgeU0UcEsuAtfzmtXVsG8pHw3JYK4uSUv6kgWiHX77rZDdjMnNaWRXQ%3D%3D'
+							+ '&pageNo='+pageNo
+							+ '&numOfRows='+numOfPage
+							+ '&MobileApp=test'
+							+ '&MobileOS=ETC'
+							+ '&arrange='+arrange
+							+ '&contentTypeId=12'
+							+ '&areaCode='+areacode
+							+ '&sigunguCode='+sigunguCode
+							+ '&listYN=Y'
+							+ '&_type=json',
+					type : 'GET',
+					dataType : 'json',
+					error : function(xhr, status, msg) {
+						alert("상태값 :" + status + " Http에러메시지 :" + msg);
+					},
+					success : function(response) {
+						response = response.response.body.items.item;
+						tripListResult(response);
+						weather(response);
+					}
+				});
+				
+
+>> 여행지 상세페이지  
+
+여행지를 선택하면 상세페이지에 접속하게 됩니다.  
+상세페이지에서는 여행지의 사진과 상세내용, 사용자가 선택한 날짜의 날씨정보, 해당 여행지의 지도를 확인할 수 있습니다.  
+**즐겨찾기** 버튼을 누르면 유저가 해당 여행지와 함께 유저가 선택한 날짜가 PREFER 테이블에 저장됩니다.  
+
+**
