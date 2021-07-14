@@ -8,9 +8,12 @@ TripDay project
 
 ----------------------------
 ## 기획 일정
-![11](https://user-images.githubusercontent.com/87305963/125574140-6ce0aecd-a648-4f0a-87da-e99cd31533c5.JPG)
+![11](https://user-images.githubusercontent.com/87305963/125575613-21e163c1-e42f-4d5e-908e-7fab2d1c259a.JPG)
 
 --------------------------
 ## 개발환경
-
+||종류|
+|Tools| STS, DBeaver|
+|Front| jsp, css, js, jquery|
+|etc| jpa, Maven, spring security, api|
 
