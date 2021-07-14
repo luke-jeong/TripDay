@@ -46,7 +46,7 @@ public class ApiTripService{
 		
 		int totalCnt = Integer.parseInt(node.findValue("totalCnt").toString());
 		
-		System.out.println("int total : "+ totalCnt);
+
 		return totalCnt;
 	}
 	

@@ -37,7 +37,6 @@ public class Board {
 
 	private String title;
 
-
 	private String content; // 섬머노트 라이브러리 <html>태그가 섞여서 디자인이 됨.
 
 	private int boardCount; // 조회수

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import com.gb.trip.model.Prefer;
 import com.gb.trip.model.User;
 import com.gb.trip.model.UserRegistration;
 import com.gb.trip.repository.UserRepository;
@@ -52,6 +51,9 @@ public class UserService {
         }
         return false;
     }
+
+
+
     public User createDto(UserRegistration userRegistration) {
         User user = new User();
         user.setUsername(userRegistration.getUsername());
@@ -60,11 +62,12 @@ public class UserService {
         user.setName(userRegistration.getName());
         user.setEnabled(true);
         user.setRole("ROLE_USER");
-
+        user.setNickname(userRegistration.getNickname());
         user.setProvider(null);
         user.setProviderId(null);
         return user;
     }
+
 
 	@Transactional
     public int save(UserRegistration userRegistration) {
@@ -77,6 +80,10 @@ public class UserService {
 		}
 
     }
+
+
+
+
 
 	@Transactional
 	public void updateUser(User user) {
@@ -98,5 +105,23 @@ public class UserService {
 		// 회원수정 함수 종료시 = 서비스 종료 = 트랜잭션 종료 = commit 이 자동으로 됩니다.
 		// 영속화된 persistance 객체의 변화가 감지되면 더티체킹이 되어 update문을 날려줌.
 	}
+
+
+	@Transactional
+	public void updateUserNickname(User user) {
+
+		User persistance = userRepository.findById(user.getId()).orElseThrow(()->{
+			return new IllegalArgumentException("회원 찾기 실패");
+		});
+
+		if(userRepository.findByNicknameVaild(user.getNickname()) == null) {
+			persistance.setNickname(user.getNickname());
+		} else {
+			throw new IllegalArgumentException("닉네임 중복");
+		}
+
+
+	}
+
 
 }

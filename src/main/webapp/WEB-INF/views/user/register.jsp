@@ -21,7 +21,11 @@
 			<form:password class="form-control" path="passwd2" />
 			<form:errors path="passwd2" class="error" />
 		</div>
-
+		<div class="form-group">
+			<div class="label">닉네임:</div>
+			<form:input class="form-control" path="nickname" />
+			<form:errors path="nickname" class="error" />
+		</div>
 		<div class="form-group">
 			<div class="label">이름:</div>
 			<form:input class="form-control" path="name" />

@@ -13,6 +13,8 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query(value="select * from user where username = ?1", nativeQuery = true)
 	User findByUsernameVaild(String username);
 
+	@Query(value="select * from user where nickname = ?1", nativeQuery = true)
+	User findByNicknameVaild(String nickname);
 
 	Optional<User> findByUsername(String username);
 }

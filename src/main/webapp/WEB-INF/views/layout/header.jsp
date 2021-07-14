@@ -46,7 +46,7 @@
 				<c:otherwise>
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link" href="/board/boardwrite">글쓰기</a></li>
-						<li class="nav-item"><a class="nav-link" href="/user/updateUser">회원정보</a></li>
+						<li class="nav-item"><a class="nav-link" href="/user/prefer">회원상세</a></li>
 						<li class="nav-item"><a class="nav-link" href="/logout_processing">로그아웃</a></li>
 						<li class="nav-item"><a class="nav-link" href="/list">TourList</a></li>
 					</ul>
