@@ -21,7 +21,7 @@ TripDay project
 
 ---------------------------
 ## ER Diagram
-db table은 4가지로 구성되어있습니다.  
+DB Table은 4가지로 구성되어있습니다.  
 회원 정보를 담고있는 **USER**  
 게시판 정보를 담고있는 **BOARD**   
 게시판의 댓글정보를 담고있는 **REPLY**  
@@ -35,4 +35,26 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
 
 
 ------------------------
-##
+##index.jsp
+메인화면입니다. 로그인 버튼과 여행지 리스트로 가는 버튼이 있습니다.
+
+spring security를 사용하기 위해 pom.xml에 dependency를 추가하고
+  
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-taglibs</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+
+index.jsp에 
+  <sec:authorize access="isAuthenticated()">
+  <sec:authentication property="principal" var="principal"/>
+를 입력해주었습니다.
