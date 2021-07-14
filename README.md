@@ -91,6 +91,7 @@ index.jsp에 taglib를 추가했습니다.
 >> 날씨 api  
  
 ajax를 이용해서 기상청으로부터 데이터를 받아왔습니다.
+
         $.ajax({
 				
 				url : 'search_date',
