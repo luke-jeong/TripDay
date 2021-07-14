@@ -87,7 +87,7 @@ index.jsp에 taglib를 추가했습니다.
 ![image](https://user-images.githubusercontent.com/87305963/125581574-9a2d2466-a9a1-4a55-b5f7-a7e2680040d5.png)
 
 ----------
->> 날씨와 여행지 정보는 api를 받아와서 출력했습니다.
+>> 날씨와 여행지 정보는 api를 받아와서 출력했습니다.  
 >> 날씨 api  
  
 ajax를 이용해서 기상청으로부터 데이터를 받아왔습니다.
