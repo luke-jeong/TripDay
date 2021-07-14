@@ -8,7 +8,8 @@ TripDay project
 
 ----------------------------
 ## 기획 일정
-![11](https://user-images.githubusercontent.com/87305963/125575613-21e163c1-e42f-4d5e-908e-7fab2d1c259a.JPG)
+![기획일정](https://user-images.githubusercontent.com/87305963/125576509-82f2f4ac-779a-4f82-9b06-a902710c7fe6.JPG)
+
 
 --------------------------
 ## 개발환경
@@ -18,3 +19,20 @@ TripDay project
 |Front| jsp, css, js, jquery|
 |etc| jpa, Maven, spring security, api|
 
+---------------------------
+## ER Diagram
+db table은 4가지로 구성되어있습니다.
+회원 정보를 담고있는 USER
+게시판 정보를 담고있는 BOARD
+게시판의 댓글정보를 담고있는 REPLY
+사용자가 저장한 즐겨찾기 정보를 담고있는 PREFER
+
+BOARD에서는 USER의 id를 foreign key로 가져오고,
+REPLY에서는 USER의 id와 BOARD의 id를 foreign key로 가져옵니다.
+PREFER에서 USER의 id를 foreign key로 가져옵니다.
+
+![er diagram](https://user-images.githubusercontent.com/87305963/125576492-6fa13206-aa5e-4172-a41e-f7a64d2c47bd.JPG)
+
+
+------------------------
+##
