@@ -35,19 +35,20 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
 
 
 ------------------------
-##index.jsp
+> ## index.jsp
 
 메인화면입니다.
   - 여행지 리스트
   - 로그인
   - 구글 로그인
   - 리뷰 게시판
-  - 깃헙 링크
+  - 깃헙 링크  
 
-로 구성되어있습니다.
+로 구성되어있습니다.  
 ![image](https://user-images.githubusercontent.com/87305963/125579471-c2c93903-fb5c-4c07-a178-7c697b989e61.png)
 
-
+-------
+>> ### 로그인 버튼
 spring security를 사용하기 위해 pom.xml에 dependency를 추가하고
   
     <dependency>
@@ -70,8 +71,13 @@ index.jsp에 taglib를 추가했습니다.
       <sec:authorize access="isAuthenticated()">
       <sec:authentication property="principal" var="principal"/>
       
-Google 로그인의 경우 Oauth를 이용해 연동했습니다.
+>> ### 구글로그인 버튼
+**Google 로그인의 경우 Oauth를 이용해 연동했습니다.**  
+**로그인 후에는 다시 index 페이지로 돌아가게 되며, 로그인 버튼이 보이지 않게 됩니다.**  
+![image](https://user-images.githubusercontent.com/87305963/125581014-5226c2f5-c58e-410d-8918-420e2180c520.png)
 
 ------------------------------------
+> ## 여행지 리스트
+여행지 
 
 
