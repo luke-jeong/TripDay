@@ -37,7 +37,7 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
 -------------------------
 ## 페이지 소개
 ------------------------
-> ## 메인화면
+> ## 메인화면  
 
 메인화면입니다.
   - 여행지 리스트
@@ -50,7 +50,7 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
 ![image](https://user-images.githubusercontent.com/87305963/125579471-c2c93903-fb5c-4c07-a178-7c697b989e61.png)
 
 -------
->> 로그인 버튼
+>> 로그인 버튼  
 spring security를 사용하기 위해 pom.xml에 dependency를 추가하고
   
     <dependency>
@@ -73,7 +73,7 @@ index.jsp에 taglib를 추가했습니다.
       <sec:authorize access="isAuthenticated()">
       <sec:authentication property="principal" var="principal"/>
       
->> 구글로그인 버튼
+>> 구글로그인 버튼  
 **Google 로그인의 경우 Oauth를 이용해 연동했습니다.**  
 **로그인 후에는 다시 index 페이지로 돌아가게 되며, 로그인 버튼이 보이지 않게 됩니다.**  
 ![image](https://user-images.githubusercontent.com/87305963/125581014-5226c2f5-c58e-410d-8918-420e2180c520.png)
@@ -86,7 +86,41 @@ index.jsp에 taglib를 추가했습니다.
 날짜와 지역을 선택하면 해당하는 지역의 날씨가 여행지 정보 밑에 출력됩니다.  
 ![image](https://user-images.githubusercontent.com/87305963/125581574-9a2d2466-a9a1-4a55-b5f7-a7e2680040d5.png)
 
+----------
 >> 날씨와 여행지 정보는 api를 받아와서 출력했습니다.
->> 
+>> 날씨 api
+
+        URL url = new URL("http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey="
+               + serviceKey + "&numOfRows=" + numOfRows + "&pageNo=" + pageNo + "&base_date=" + base_date
+               + "&base_time=" + base_time + "&nx=" + nx + "&ny=" + ny + "&dataType=JSON");
+
+         BufferedReader bf;
+         String r = "";
+         bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+         while ((r = bf.readLine()) != null) {
+
+            json = json.concat(r);
+         }
+
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+     
+         JsonNode node = mapper.readTree(json);
+         root = mapper.readValue(node.findValue("items").toString(), Items.class);
 
 
+사용자가 선택한 날짜와 지역 정보를 url에 넣어주고 넣어준 url을 통해 받아온 날씨 결과를 controller에 전달하여 출력했습니다.
+
+    return root.getItem();
+
+날씨는 사용자가 선택한 날짜를 현재 날짜와 비교하여 단기 예보와 장기 예보로 나누어야했는데,  
+이는 controller에서 날짜 차이를 계산해 if 문으로 구분했습니다.
+
+    LocalDate s_date_local = LocalDate.parse(map.get("s_date"), DateTimeFormatter.ISO_DATE);
+		LocalDate today = LocalDate.now();
+		
+		Period period = Period.between(today, s_date_local);
+    
+    
+
+>> 여행지 api
