@@ -38,13 +38,12 @@
 					}
 				});
 		function weather(result){
-		if(s_date !='' && s_date != "20"){
+		if(s_date !='' && s_date != '20'){
 			
 			var cnt = 0;
 			for(var i=0; i<result.length;i++){
 			//날씨 api
 			$.ajax({
-				
 				url : 'search_date',
 				type : 'post',
 				dataType : 'json',
@@ -139,7 +138,9 @@
 		areaCode('${areacode}','a');
 		$('option[value="${arrange}"]').attr("selected","selected");
 		$('option[value="${numOfPage}"]').attr("selected","selected");
+		if(${s_date} != 20){			
 		$('#s_date').val('${s_date}');
+		}
 		}
 	function textValdCheck(txt) {
 		if (txt == null || txt == 'undefine') {

@@ -43,7 +43,7 @@ function setAtagHtml(){
 								</tr>
 								<tr>
 									<th scope="col">관광지 주소</th>
-									<td id="addr">${detail.addr1}</td>
+									<td id="addr" style="font-size: 0.9em;">${detail.addr1}</td>
 								</tr>
 								<tr>
 									<th scope="col">관광 유형</th>
@@ -51,11 +51,11 @@ function setAtagHtml(){
 								</tr>
 								<tr>
 									<th scope="col">전화번호</th>
-									<td><p>${intro.infocenter}</p></td>
+									<td><div style="overflow: auto;width: 290px; height: 30px;">${intro.infocenter}</div></td>
 								</tr>
 								<tr>
 									<th scope="col">운영시간</th>
-									<td>${intro.usetime}${intro.restdate}</td>
+									<td><div style="overflow:auto; width: 290px; height: 30px;">${intro.usetime}${intro.restdate}</div></td>
 								</tr>
 								<tr>
 									<th scope="col">홈페이지</th>
@@ -63,11 +63,11 @@ function setAtagHtml(){
 								</tr>
 								<tr>
 									<th scope="col">주차장</th>
-									<td>${intro.parking}</td>
+									<td><div style="overflow:auto; width: 290px; height: 30px;">${intro.parking}</div></td>
 								</tr>
 								<tr>
 									<th scope="col">체험 정보</th>
-									<td>${intro.expguide}</td>
+									<td><div style="overflow:auto; width: 290px; height: 30px;">${intro.expguide}</div></td>
 								</tr>
 							</tbody>
 						</table>
@@ -89,10 +89,12 @@ function setAtagHtml(){
 								onclick="history.back();">목록으로</button>
 						</div>
 					</div>
+					
 					<!--//E:table-->
 
 				</div>
 			</header>
+			<hr>
 		</article>
 		<div class="weather"
 		style="display: block; position: relative; width: 1200px; margin: 0 auto;">
