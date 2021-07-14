@@ -36,7 +36,8 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
 
 ------------------------
 ##index.jsp
-메인화면입니다. 로그인 버튼과 여행지 리스트로 가는 버튼이 있습니다.
+-메인화면입니다.
+
 ![image](https://user-images.githubusercontent.com/87305963/125579471-c2c93903-fb5c-4c07-a178-7c697b989e61.png)
 
 
