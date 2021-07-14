@@ -8,7 +8,7 @@ TripDay project
 
 ----------------------------
 ## 기획 일정
-![기획일정](https://github.com/GagaKor/teamProject-TripDay-API/blob/master/%EA%B7%B8%EB%A6%BC1.jpg)
+![기획일정](https://github.com/GagaKor/teamProject-TripDay-API/blob/master/readmeImg/plan.jpg)
 
 
 --------------------------
@@ -31,7 +31,7 @@ BOARD에서는 USER의 id를 foreign key로 가져오고,
 REPLY에서는 USER의 id와 BOARD의 id를 foreign key로 가져옵니다. 
 PREFER에서 USER의 id를 foreign key로 가져옵니다.  
 
-![er diagram](https://user-images.githubusercontent.com/87305963/125576492-6fa13206-aa5e-4172-a41e-f7a64d2c47bd.JPG)
+![er diagram](https://github.com/GagaKor/teamProject-TripDay-API/blob/master/readmeImg/er.jpg)
 
 
 ------------------------
@@ -43,7 +43,7 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
   -리뷰 게시판
   -깃헙 링크
 로 구성되어있습니다.
-![image](https://user-images.githubusercontent.com/87305963/125579471-c2c93903-fb5c-4c07-a178-7c697b989e61.png)
+![image](https://github.com/GagaKor/teamProject-TripDay-API/blob/master/readmeImg/index.jpg)
 
 
 spring security를 사용하기 위해 pom.xml에 dependency를 추가하고
