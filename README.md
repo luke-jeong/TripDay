@@ -22,10 +22,10 @@ TripDay project
 ---------------------------
 ## ER Diagram
 db table은 4가지로 구성되어있습니다.  
-회원 정보를 담고있는 USER  
-게시판 정보를 담고있는 BOARD  
-게시판의 댓글정보를 담고있는 REPLY  
-사용자가 저장한 즐겨찾기 정보를 담고있는 PREFER  
+회원 정보를 담고있는 **USER**  
+게시판 정보를 담고있는 **BOARD**   
+게시판의 댓글정보를 담고있는 **REPLY**  
+사용자가 저장한 즐겨찾기 정보를 담고있는 **PREFER**  
 
 BOARD에서는 USER의 id를 foreign key로 가져오고,  
 REPLY에서는 USER의 id와 BOARD의 id를 foreign key로 가져옵니다. 
