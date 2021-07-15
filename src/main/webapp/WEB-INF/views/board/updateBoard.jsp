@@ -42,7 +42,11 @@
 		</div>
 	<div class="bt_wrap">
 	<button id="btn-update" class="bt_css bt_black">수정</button>
+<<<<<<< HEAD
 	<a onclick="history.back();" class="bt_css">취소</a>
+=======
+	<a href="/?${ pagination.queryString}" class="bt_css">취소</a>
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 	</div>
 	</form>
 

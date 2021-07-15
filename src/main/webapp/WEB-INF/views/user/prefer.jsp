@@ -20,7 +20,11 @@
 	<input type="hidden" value="${principal.user.id}" id="userId">
 	<hr>
 	<b>날짜 선택 : </b><input type="date" id="s_date-prefer">
+<<<<<<< HEAD
 	<button class="bt_css" onclick="location.reload();" style="height:33px; width:45px; font-size: 0.7em;">모든일정</button>
+=======
+	<button onclick="location.reload();">모든일정</button>
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 	<hr>
 	<div class="col-sm-9">
 	<c:forEach items="${prefers}" var="prefer">

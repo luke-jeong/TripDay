@@ -98,6 +98,7 @@
 				</c:when>
 				<c:otherwise>
 					<ul class="navbar-nav">
+<<<<<<< HEAD
 						<li class="nav-item"><a class="nav-link"
 							href="/board/boardwrite">후기 작성</a></li>
 						<li class="nav-item"
@@ -109,6 +110,12 @@
 						<li class="nav-item"
 							style="margin-left: 25px; margin-right: 25px;"><a
 							class="nav-link" href="/boardList">후기게시판</a></li>
+=======
+						<li class="nav-item"><a class="nav-link" href="/board/boardwrite">글쓰기</a></li>
+						<li class="nav-item"><a class="nav-link" href="/user/prefer">회원상세</a></li>
+						<li class="nav-item"><a class="nav-link" href="/logout_processing">로그아웃</a></li>
+						<li class="nav-item"><a class="nav-link" href="/list">TourList</a></li>
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 					</ul>
 				</c:otherwise>
 			</c:choose>

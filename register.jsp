@@ -31,7 +31,6 @@
 			<form:password class="form-control" path="passwd2" />
 			<form:errors path="passwd2" class="error" />
 		</div>
-<<<<<<< HEAD
 		<div class="form-group" style="margin: 25px 10px;">
 			<div class="label" style="font-size: 18px;">닉네임</div>
 			<form:input class="form-control" path="nickname" />
@@ -39,15 +38,6 @@
 		</div>
 		<div class="form-group" style="margin: 25px 10px;">
 			<div class="label" style="font-size: 18px;">이름</div>
-=======
-		<div class="form-group">
-			<div class="label">닉네임:</div>
-			<form:input class="form-control" path="nickname" />
-			<form:errors path="nickname" class="error" />
-		</div>
-		<div class="form-group">
-			<div class="label">이름:</div>
->>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 			<form:input class="form-control" path="name" />
 			<form:errors path="name" class="error" />
 		</div>

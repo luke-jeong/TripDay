@@ -4,6 +4,10 @@
 <%@ include file="../layout/header.jsp"%>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 <div class="board_wrap">
 	<div class="board_title">
 		<strong>후기 게시판</strong>
@@ -38,7 +42,11 @@
 				<button id="btn-delete" class="bt_css">삭제</button>
 			</c:if>
 			<button class="bt_css" onclick="history.back()">돌아가기</button>
+<<<<<<< HEAD
 			<a href="/boardList?${pagination.queryString}" class="bt_css">목록으로</a>
+=======
+			<a href="/?${ pagination.queryString}" class="bt_css">목록으로</a>
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 		</div>
 	</div>
 </div>

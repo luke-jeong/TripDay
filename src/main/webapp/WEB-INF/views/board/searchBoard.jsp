@@ -3,6 +3,7 @@
 
 <%@ include file="../layout/header.jsp"%>
 
+<<<<<<< HEAD
 <h1 id="logo" style="margin-top: 20px; margin-bottom: 20px;">
 	<a href="/list"><img alt="로고" src="${R}/res/img/logo.png"></a>
 </h1>
@@ -13,10 +14,14 @@
 			</script>
 		</c:if> --%>
 <div class="board_wrap" style="margin-top: 30px;">
+=======
+<div class="board_wrap">
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 	<div class="board_title">
 		<strong>후기 게시판</strong>
 
 	</div>
+<<<<<<< HEAD
 	<div style="margin: 20px; margin-left: 900px;">
 		<form action="/board/search" method="GET">
 			<div class="btn-group" role="group" aria-label="Basic example">
@@ -25,6 +30,8 @@
 			</div>
 		</form>
 	</div>
+=======
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 	<div class="board_list_wrap">
 		<div class="board_list">
 			<div class="top">

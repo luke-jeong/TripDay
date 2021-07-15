@@ -25,6 +25,7 @@ public class UserController {
 		return "user/register";
 	}
 
+<<<<<<< HEAD
 	@PostMapping("/register")
 	public String register(Model model, @Valid UserRegistration userRegistration, BindingResult bindingResult) {
 		if (userService.hasErrors(userRegistration, bindingResult)) {
@@ -33,6 +34,22 @@ public class UserController {
 		userService.save(userRegistration);
 		return "redirect:login";
 	}
+=======
+    @PostMapping("/register")
+    public String register(Model model,
+            @Valid UserRegistration userRegistration, BindingResult bindingResult)
+    {
+        if (userService.hasErrors(userRegistration, bindingResult)) {
+            return "user/register";
+        }
+        userService.save(userRegistration);
+        return "redirect:login";
+    }
+    @RequestMapping("registerSuccess")
+    public String registerSurccess() {
+        return "user/registerSuccess";
+    }
+>>>>>>> dcfdf7f1ea9d65613e0aaf552aa2c2bc7080ea95
 
 	@GetMapping("/login")
 	public String login(Model model, HttpServletRequest request) {
@@ -53,5 +70,10 @@ public class UserController {
 	@GetMapping("/user/updateNick")
 	public String updateNick() {
 		return "user/updateNick";
+	}
+
+	@GetMapping("/user/updateNick")
+	public String updateNick() {
+	  return "user/updateNick";
 	}
 }
