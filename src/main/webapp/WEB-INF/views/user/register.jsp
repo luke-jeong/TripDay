@@ -3,6 +3,13 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
+<sec:authorize access="isAuthenticated()">
+	<script>
+	alert("로그인 된 사용자");
+	location.href = "/";
+	</script>
+</sec:authorize>
+<sec:authorize access="not authenticated">.
 
 <div class="container" style="width: 500px;  margin-top: 90px; margin-bottom: 90px; border: solid 2px blue; padding:30px; border-radius: 30px;">
 	<div class="board_title">
@@ -47,5 +54,5 @@
 
 </div>
 
-
+</sec:authorize>
 <%@ include file="../layout/footer.jsp"%>
