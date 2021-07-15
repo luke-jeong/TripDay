@@ -26,16 +26,16 @@
 	</div>
 	<div class="bt_wrap">
 	<button id="btn-save" class="bt_css bt_black">등록</button>
-	<a href="/?${ pagination.queryString}" class="bt_css">취소</a>
+	<a onclick="history.back();" class="bt_css">취소</a>
 	</div>
 	</form>
 	
 </div>
+<script src="${R}/res/js/board.js"></script>
 <script>
 	$('.summernote').summernote({
 		tabsize : 2,
 		height : 300
 	});
 </script>
-<script src="${R}/res/js/board.js"></script>
 <%@ include file="../layout/footer.jsp"%>

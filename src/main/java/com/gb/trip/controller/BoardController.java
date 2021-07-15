@@ -22,7 +22,7 @@ public class BoardController {
 
 	// 컨트롤로에서 세션을 어떻게 찾는지?
 	// @AuthenticationPrincipal PrincipalDetail principal
-	@GetMapping("/board")
+	@GetMapping("/boardList")
 	public String index(Model model, Pagination pagination, String searchText, @AuthenticationPrincipal MyUserDetails myUserDetails) {
 
 		model.addAttribute("boards", boardService.listBoard(pagination));

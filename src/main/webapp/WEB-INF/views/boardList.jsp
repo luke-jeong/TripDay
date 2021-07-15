@@ -2,14 +2,22 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="layout/header.jsp"%>
+
+<h1 id="logo" style="margin-top: 20px; margin-bottom: 20px;">
+	<a href="/list"><img alt="로고" src="res/img/logo.png"></a>
+</h1>
+<div class="tableWrap"></div>
 <%-- 		<c:if test="${empty principal.user.nickname}">
 			<script>
 				location.href = "user/nicknameRegister";
 			</script>
 		</c:if> --%>
-<div class="board_wrap">
+<div class="board_wrap" style="margin-top: 30px;">
 	<div class="board_title">
 		<strong>후기 게시판</strong>
+
+	</div>
+	<div style="margin: 20px; margin-left: 900px;">
 		<form action="/board/search" method="GET">
 			<div class="btn-group" role="group" aria-label="Basic example">
 				<input name="keyword" type="text" placeholder="검색어를 입력해주세요">
@@ -34,7 +42,8 @@
 					<a href="/board/${board.id}" class="btn btn-primary">상세보기</a>
 				</div>
 			</div> --%>
-				<div>
+			
+				<div class="clickable" data-url = "/board/${board.id}">
 					<div class="num">${board.id}</div>
 					<div class="title">
 						<a href="/board/${board.id}">${board.title}</a>
@@ -47,12 +56,25 @@
 			</c:forEach>
 
 		</div>
+
+
 	</div>
+
+
 	<div style="margin-top: 30px">
 		<my:pagination pageSize="${ pagination.sz }"
 			recordCount="${ pagination.recordCount }" queryStringName="pg" />
 	</div>
+	
+	 <div class="bt_wrap">
+	 		<sec:authorize access="isAuthenticated()">
+
+			<a href="/board/boardwrite" class="bt_css bt_black">등록</a>
+
+		</sec:authorize>
+	 </div>
 
 </div>
+
 <script src="${R}/res/js/board.js"></script>
 <%@ include file="layout/footer.jsp"%>

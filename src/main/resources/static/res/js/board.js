@@ -6,7 +6,7 @@ let index = {
 			$("#btn-delete").on("click", ()=>{ 
 				this.deleteById();
 			});
-			$("#btn-update").on("click", ()=>{ 
+			$("#btn-update").on("click", ()=>{
 				this.update();
 			});
 			$("#btn-reply-save").on("click", ()=>{ 
@@ -29,7 +29,7 @@ let index = {
 				dataType: "json"
 			}).done(function(resp){
 				alert("글쓰기가 완료되었습니다.");
-				location.href = "/";
+				location.href = "/boardList";
 			}).fail(function(error){
 				alert(JSON.stringify(error));
 			}); 
@@ -44,7 +44,7 @@ let index = {
 				dataType: "json"
 			}).done(function(resp){
 				alert("삭제가 완료되었습니다.");
-				location.href = "/";
+				location.href = "/boardList";
 			}).fail(function(error){
 				alert(JSON.stringify(error));
 			}); 
@@ -57,7 +57,6 @@ let index = {
 					title: $("#title").val(),
 					content: $("#content").val()
 			};
-
 			$.ajax({ 
 				type: "PUT",
 				url: "/ajax/board/"+id,
@@ -65,8 +64,8 @@ let index = {
 				contentType: "application/json; charset=utf-8",
 				dataType: "json"
 			}).done(function(resp){
-				alert("글수정이 완료되었습니다.");
-				location.href = "/";
+				 
+				location.href='/boardList';
 			}).fail(function(error){
 				alert(JSON.stringify(error));
 			}); 

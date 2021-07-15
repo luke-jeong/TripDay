@@ -38,12 +38,13 @@
 					}
 				});
 		function weather(result){
-		if(s_date !='' && s_date != '20'){
+		if(s_date !='' && s_date != "20"){
 			
 			var cnt = 0;
 			for(var i=0; i<result.length;i++){
 			//날씨 api
 			$.ajax({
+				
 				url : 'search_date',
 				type : 'post',
 				dataType : 'json',
@@ -138,9 +139,7 @@
 		areaCode('${areacode}','a');
 		$('option[value="${arrange}"]').attr("selected","selected");
 		$('option[value="${numOfPage}"]').attr("selected","selected");
-		if(${s_date} != 20){			
 		$('#s_date').val('${s_date}');
-		}
 		}
 	function textValdCheck(txt) {
 		if (txt == null || txt == 'undefine') {
@@ -259,7 +258,7 @@
 						</select> <select name="sigungucode" id="sigungucode" title="시군구선택">
 								<option value="">시군구 선택</option>
 						</select></td>
-						<td><input type="button" value="검색" onclick="validCheck()"></td>
+						<td><input type="button" value="검색" class="btn btn-secondary" style="width: 100px;" onclick="validCheck()"></td>
 					</tr>
 				</tbody>
 			</table>

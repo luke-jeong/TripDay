@@ -4,7 +4,6 @@
 <%@ include file="../layout/header.jsp"%>
 
 
-
 <div class="board_wrap">
 	<div class="board_title">
 		<strong>후기 게시판</strong>
@@ -39,7 +38,7 @@
 				<button id="btn-delete" class="bt_css">삭제</button>
 			</c:if>
 			<button class="bt_css" onclick="history.back()">돌아가기</button>
-			<a href="/?${ pagination.queryString}" class="bt_css">목록으로</a>
+			<a href="/boardList?${pagination.queryString}" class="bt_css">목록으로</a>
 		</div>
 	</div>
 </div>
@@ -86,5 +85,6 @@
 
 
 <script src="${R}/res/js/board.js"></script>
+
 <%@ include file="../layout/footer.jsp"%>
 

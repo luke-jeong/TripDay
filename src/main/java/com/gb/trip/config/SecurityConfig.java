@@ -14,8 +14,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import com.gb.trip.handler.LoginSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -35,6 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return super.authenticationManagerBean();
 	}
 
+	@Bean
+	public AuthenticationSuccessHandler successHandler() {
+	  return new LoginSuccessHandler("/defaultUrl");//default로 이동할 url
+	}
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
@@ -52,8 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     	http.authorizeRequests()
             .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-            .antMatchers("/user/**","/board/boardwrite","/board/detail/",
-            		"/board/updateBoard").authenticated();
+            .antMatchers("/user/**","/board/**").authenticated();
 
         http.formLogin()
             .loginPage("/login")
@@ -61,8 +69,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .failureUrl("/login?error")
             .defaultSuccessUrl("/")
             .usernameParameter("username")
-            .passwordParameter("password");
-
+            .passwordParameter("password")
+            .successHandler(successHandler())
+            ;
         http.logout()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout_processing"))
             .logoutSuccessUrl("/login")
@@ -74,6 +83,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.oauth2Login()
 	        .loginPage("/login")
+	        .successHandler(successHandler())
 	        .userInfoEndpoint()
 	        .userService(myOauth2UserService);
     }

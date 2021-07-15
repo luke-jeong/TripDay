@@ -2,7 +2,7 @@
 
 <%@ include file="../layout/header.jsp"%>
 
-<div class="container">
+<div class="container" style="width: 500px;   margin-top: 220px; margin-bottom:220px; border: solid 1px blue; padding:30px; border-radius: 30px;">
 	<form>
 		<input type="hidden" id="id" value="${principal.user.id}" />
 		<div class="form-group">
@@ -23,7 +23,7 @@
 		</div>
 		
 	</form>
-	<button id="btn-update" class="btn btn-primary" style="color: black; border: 1px grey; padding: 5px; font-size: 1.2em">회원수정완료</button>
+	<button id="btn-update" class="btn btn-primary" style="color: white; border: 1px grey; padding: 5px; font-size: 1.2em">수정</button>
 
 </div>
 

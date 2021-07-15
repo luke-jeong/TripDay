@@ -3,10 +3,27 @@
 
 <%@ include file="../layout/header.jsp"%>
 
-<div class="board_wrap">
+<h1 id="logo" style="margin-top: 20px; margin-bottom: 20px;">
+	<a href="/list"><img alt="로고" src="${R}/res/img/logo.png"></a>
+</h1>
+<div class="tableWrap"></div>
+<%-- 		<c:if test="${empty principal.user.nickname}">
+			<script>
+				location.href = "user/nicknameRegister";
+			</script>
+		</c:if> --%>
+<div class="board_wrap" style="margin-top: 30px;">
 	<div class="board_title">
 		<strong>후기 게시판</strong>
 
+	</div>
+	<div style="margin: 20px; margin-left: 900px;">
+		<form action="/board/search" method="GET">
+			<div class="btn-group" role="group" aria-label="Basic example">
+				<input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+				<button class="btn btn-secondary">검색</button>
+			</div>
+		</form>
 	</div>
 	<div class="board_list_wrap">
 		<div class="board_list">
