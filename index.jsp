@@ -28,7 +28,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Trip Day</h1>
-						<p>ㄱㅎㅈ &nbsp;&bull;&nbsp; ㅈㄱㅎ &nbsp;&bull;&nbsp; ㅂㅇㅈ</p>
+						<p>ㄱㅎㅈ &nbsp;&bull;&nbsp; ㅈㄱㅎ &nbsp;&bull;&nbsp; </p>
 						<nav>
 							<ul>
 								<li><a href="/list" class="icon brands fa-galactic-republic"><span class="label">List</span></a></li>
