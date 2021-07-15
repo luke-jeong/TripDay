@@ -55,6 +55,8 @@ PREFER에서 USER의 id를 foreign key로 가져옵니다.
 
 >> 구글로그인 버튼  
 **Google 로그인의 경우 Oauth를 이용해 연동했습니다.**  
+
+
 **로그인 후에는 다시 index 페이지로 돌아가게 되며, 로그인 버튼이 보이지 않게 됩니다.**  
 ![image](https://user-images.githubusercontent.com/87305963/125581014-5226c2f5-c58e-410d-8918-420e2180c520.png)
 
